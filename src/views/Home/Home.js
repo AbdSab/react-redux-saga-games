@@ -1,8 +1,10 @@
 import React from 'react';
+import BestGames from '../../components/BestGames';
 
 const Home = () => {
+
     return(
-        <div>Hello</div>
+        <BestGames />
     )
 }
 
