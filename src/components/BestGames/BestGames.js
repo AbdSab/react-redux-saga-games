@@ -1,16 +1,22 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Banner from '../Banner';
 import { getBestGames } from '../../redux/bestgames/actions';
 
 const BestGames = () => {
     const dispatch = useDispatch();
+    const {status, games} = useSelector(state => state.bestGames);
+
     useEffect(()=>{
         getBestGames()(dispatch);
     },[])
-
+    
+    const topThreeGames = games ? games.slice(0,3) : [];
+    
     return (
-        <Banner />
+        status === 'fetching' ? 
+            <div>Loading</div>
+            :<Banner games={topThreeGames}/>
     )
 }
 
