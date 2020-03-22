@@ -8,9 +8,9 @@ const Image = ({src, className, ...props}) => {
     const [ref, isVisible] = useInView({threshold:1});
 
     const placeholder = isLoading && (
-        <div className={classnames(className, 'bg-gray-300 flex')} {...props}>
+        <div className={classnames(className, 'bg-black opacity-75 flex')} {...props}>
             <div className="flex items-center justify-center w-full">
-                <Loader />
+                <Loader color="white"/>
             </div>
         </div>
     );
