@@ -14,13 +14,11 @@ const BestGames = () => {
     
     const topThreeGames = games ? games.slice(0,3) : [];
     
-    // return (
-    //     status === 'fetching' ? 
-    //         <div>Loading</div>
-    //         :<Banner games={topThreeGames}/>
-    // )
-
-    return Array(20).fill().map(e => <><Image className="w-1/6 h-64" height="500" width="500" src={"https://via.placeholder.com/"+Math.floor(Math.random()*1000)} /><br/></>)
+    return (
+        status === 'fetching' ? 
+            <div>Loading</div>
+            :<Banner games={topThreeGames}/>
+    )
 }
 
 export default BestGames;
