@@ -16,12 +16,12 @@ const Image = ({src, className, ...props}) => {
     );
 
     return (
-        <div ref={ref}>
+        <div ref={ref} className="h-full w-full">
             {isVisible
             ? (
                 <>
                     {placeholder}
-                    <img src={src} onLoad={()=> setIsLoading(false)} className={className} {...props}/>
+                    <img src={src} onLoad={()=> setIsLoading(false)} className={classnames(className, isLoading ? 'hidden' : '')} {...props}/>
                 </>
             ) : null}
         </div>
